@@ -18,23 +18,51 @@
     </head>
     <body>
 
+        <div id="overlay-dim" class="overlay-dim">
+            <div id="close-overlay" class="close-overlay"><img src="images/icon-close.svg"></div>
+        </div>
+
         <div class="hero__image-holder">
             <img class="hero__image-behind" src="images/bg-tablet-pattern.svg">
         </div>
 
         <nav>
             <img src="images/logo.svg">
-            <ul class="nav-items">
+            <ul class="nav-items" id="nav-items">
                 <li>Pricing</li>
                 <li>Product</li>
                 <li>About Us</li>
                 <li>Careers</li>
                 <li>Community</li>
             </ul>
-            <button class="nav-items">Get Started</button>
-            <img src="images/icon-hamburger.svg">
+
+            <button class="nav-button round-button">Get Started</button>
+
+            <img id="navHam" class="navHam" src="images/icon-hamburger.svg">
         </nav>
 
+
+
+        <script>
+            let mainNav = document.getElementById("nav-items"); 
+            let navBarToggle = document.getElementById("navHam");
+
+            let overlay = document.getElementById("overlay-dim");
+            let overlayClose = document.getElementById("close-overlay");
+
+            overlayClose.addEventListener("click", function() {
+                mainNav.classList.toggle("active");
+                overlay.classList.toggle("active");
+                navBarToggle.classList.remove("deactive");
+            });
+
+            navBarToggle.addEventListener("click", function() {
+                mainNav.classList.toggle("active");
+                overlay.classList.toggle("active");
+                navBarToggle.classList.toggle("deactive");
+            });
+
+        </script>
 
 
         <main>
