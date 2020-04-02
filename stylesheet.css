@@ -118,7 +118,7 @@ nav img {
     color: var(--primary-dark-blue);
 }
 
-.nav-items li:hover {
+.nav-items li a:hover {
     color: var(--primary-bright-red);
     cursor: pointer;
 }
@@ -328,6 +328,8 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    
+    position: relative;
 
 }
 
@@ -388,7 +390,7 @@ footer {
     margin-bottom: 15px;
 }
 
-.footer__row:hover {
+.footer__row a:hover {
     color: var(--primary-bright-red);
     cursor: pointer;
 }
@@ -763,7 +765,6 @@ footer {
         justify-content: flex-start;
         margin: 20px 0px;
         order: 2;
-        width: 30%;
     }
 }
 
@@ -773,3 +774,7 @@ footer {
     }
 }
 
+
+a {
+    
+}
