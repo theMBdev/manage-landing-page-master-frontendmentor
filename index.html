@@ -17,15 +17,15 @@
     <body>
 
         <div id="overlay-dim" class="overlay-dim">
-            <div id="close-overlay" class="close-overlay"><img src="images/icon-close.svg"></div>
+            <div id="close-overlay" class="close-overlay"><img src="images/icon-close.svg" alt=""></div>
         </div>
 
         <div class="hero__image-holder">
-            <img class="hero__image-behind" src="images/bg-tablet-pattern.svg">
+            <img class="hero__image-behind" src="images/bg-tablet-pattern.svg" alt="">
         </div>
 
         <nav>
-            <img src="images/logo.svg">
+            <img src="images/logo.svg" alt="">
             <ul class="nav-items" id="nav-items">
                 <li><a>Pricing</a></li>
                 <li><a>Product</a></li>
@@ -36,7 +36,7 @@
 
             <button class="nav-button round-button">Get Started</button>
 
-            <img id="navHam" class="navHam" src="images/icon-hamburger.svg">
+            <img id="navHam" class="navHam" src="images/icon-hamburger.svg" alt="">
         </nav>
 
 
@@ -66,17 +66,17 @@
         <main>
 
             <div class="hero__image-holder-2">
-                <img class="hero__image-behind-2" src="images/bg-tablet-pattern.svg">
+                <img class="hero__image-behind-2" src="images/bg-tablet-pattern.svg" alt="">
             </div>
 
             <div class="hero__image-holder-3">
-                
+
                 <svg xmlns="http://www.w3.org/2000/svg" width="814" height="814" ><rect width="436" height="970" x="774" y="-62" fill="#FFF0EC" fill-rule="evenodd" rx="218" transform="rotate(45 718.814 -291.157)"/></svg>
 
             </div>
 
             <section class="hero">
-                <img class="hero__image" src="images/illustration-intro.svg">  
+                <img class="hero__image" src="images/illustration-intro.svg" alt="">  
 
                 <div class="hero__left">
                     <h1>Bring everyone together to build better products.</h1>
@@ -146,7 +146,7 @@
 
                     <div class="carousel-cell">                    
                         <div class="card">
-                            <img class="card__image" src="images/avatar-anisha.png">
+                            <img class="card__image" src="images/avatar-anisha.png" alt="">
                             <h3 class="card__name">Anisha Li</h3>
                             <p>“Manage has supercharged our team’s workflow. The ability to maintain 
                                 visibility on larger milestones at all times keeps everyone motivated.”
@@ -156,7 +156,7 @@
 
                     <div class="carousel-cell">
                         <div class="card">
-                            <img class="card__image" src="images/avatar-ali.png">
+                            <img class="card__image" src="images/avatar-ali.png" alt="">
                             <h3 class="card__name">Ali Bravo</h3>
                             <p> “We have been able to cancel so many other subscriptions since using 
                                 Manage. There is no more cross-channel confusion and everyone is much 
@@ -167,7 +167,7 @@
 
                     <div class="carousel-cell">
                         <div class="card">
-                            <img class="card__image" src="images/avatar-richard.png">
+                            <img class="card__image" src="images/avatar-richard.png" alt="">
                             <h3 class="card__name">Richard Watts</h3>
                             <p> “Manage allows us to provide structure and process. It keeps us organized 
                                 and focused. I can’t stop recommending them to everyone I talk to!”
@@ -177,7 +177,7 @@
 
                     <div class="carousel-cell">
                         <div class="card">
-                            <img class="card__image" src="images/avatar-shanai.png">
+                            <img class="card__image" src="images/avatar-shanai.png" alt="">
                             <h3 class="card__name">Shanai Gough</h3>
                             <p>  “Their software allows us to track, manage and collaborate on our projects 
                                 from anywhere. It keeps the whole team in-sync without being intrusive.”
@@ -191,9 +191,9 @@
             </section>
 
             <section class="section-last">
-                <img class="section-last__image--desktop" src="images/bg-simplify-section-desktop.svg">
+                <img class="section-last__image--desktop" src="images/bg-simplify-section-desktop.svg" alt="">
 
-                <img class="section-last__image--mobile" src="images/bg-simplify-section-mobile.svg">
+                <img class="section-last__image--mobile" src="images/bg-simplify-section-mobile.svg" alt="">
 
                 <div class="section-last__content">
                     <h1 class="section-last__title">Simplify how your team works today.</h1>
@@ -207,10 +207,30 @@
 
             <div class="footer-container">
 
-                <div class="footer-input-container">
-                    <input class="input-round" type="text" placeholder="Updates in your inbox…"> 
-                    <button class="round-button round-button-no-shadow">Go</button>
+                <div class="col-container-2">                    
+                    <div class="footer-input-container">
+                        <input id="email-input" class="input-round" type="email" placeholder="Updates in your inbox…" oninput="removeError()"> 
+                        <button id="emailSubmit" class="round-button round-button-no-shadow">Go</button>
+                    </div>
+                    <p id="message">Please enter a valid email</p>
                 </div>
+
+                <script>
+                    // no submit form - just showing the error that was requested in the design
+                    document.getElementById("emailSubmit").addEventListener("click", showError);
+
+                    function showError() {
+                        document.getElementById("message").style.display = "block";
+                        document.getElementById("email-input").style.color = "red";
+                    }   
+
+                    function removeError() {
+                        document.getElementById("message").style.display = "none";
+                        document.getElementById("email-input").style.color = "black";
+                    }
+                </script>
+
+
 
                 <div class="footer-mobile-row">
                     <ul class="footer__column">
@@ -227,7 +247,7 @@
                     </ul> 
                 </div>
 
-                <div class="mobile-col-4">
+                <div class="col-container">
                     <div class="footer__column">
                         <ul class="social-row">
                             <li><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 20 20"><path width="21" height="20" d="M18.896 0H1.104C.494 0 0 .494 0 1.104v17.793C0 19.506.494 20 1.104 20h9.58v-7.745H8.076V9.237h2.606V7.01c0-2.583 1.578-3.99 3.883-3.99 1.104 0 2.052.082 2.329.119v2.7h-1.598c-1.254 0-1.496.597-1.496 1.47v1.928h2.989l-.39 3.018h-2.6V20h5.098c.608 0 1.102-.494 1.102-1.104V1.104C20 .494 19.506 0 18.896 0z"/></svg></li>
